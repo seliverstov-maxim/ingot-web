@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'state_machine'
 gem 'twitter-bootstrap-rails'
 gem 'unicorn'
+gem 'factory_girl_rails', '~> 4.0'
 
 
 # Gems used only for assets and not required
