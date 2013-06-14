@@ -19,19 +19,33 @@ class Web::Admin::ImagesController < Web::Admin::ApplicationController
     @image = Image.new(params[:image])
     if @image.save
       #success flash message
+      redirect_to action: :index
     else
       #failed flash message
+      render :new
+    end
   end
 
-  def udate
+  def update
     @image = Image.find(params[:id])
     if @image.update_attributes(params[:image])
       #success flash message
     else
       #failed flash message
+    end
+    redirect_to action: :edit
   end
 
   def destroy
     @image = Image.find(params[:id])
-    @image.destroy
+    
+    if image.can_delete?
+      @image.destroy
+      #success flash message
+      redirect_to action: :index
+    else
+      #failed flash message
+      redirect_to :back
+    end
   end
+end
