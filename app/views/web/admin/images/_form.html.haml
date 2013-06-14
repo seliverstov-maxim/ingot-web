@@ -1,9 +1,13 @@
-= simple_form_for [:admin, @image], :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for [:admin, @image], :html => { :class => 'form-vertical', multipart: true } do |f|
   = f.input :name
   = f.input :description
   = f.input :tags
   = f.input :user_agent
   = f.input :ip
+  
+  - if @image.file?
+    = image_tag @image.file, class: 'controls', title: @image.name
+  = f.input :file, as: :file
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_images_path, :class => 'btn'
