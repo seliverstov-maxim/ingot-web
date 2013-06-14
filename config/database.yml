@@ -1,0 +1,23 @@
+setup: &setup
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *setup
+  database: ingot_dev
+  username: postgres
+  password:
+
+test:
+  <<: *setup
+  database: ingot_test
+  username: postgres
+  password:
+
+production:
+  <<: *setup
+  database: ingot_prod
+  username: postgres
+  password:
