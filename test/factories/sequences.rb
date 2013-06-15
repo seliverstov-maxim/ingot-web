@@ -16,6 +16,7 @@ FactoryGirl.define do
   end
 
   sequence :ip do |n|
-    "127.0.0.1"
+    ip = IPAddr.new '127.0.0.1'
+    ip.to_i
   end
 end
