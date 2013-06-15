@@ -11,6 +11,11 @@ class Web::Admin::ImagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get show" do
+    get :show, id: @image.id
+    assert_response :success
+  end
+
   test "should get new" do
     get :new
     assert_response :success
