@@ -19,6 +19,7 @@ gem 'state_machine'
 gem 'twitter-bootstrap-rails'
 gem 'unicorn'
 gem 'factory_girl_rails', '~> 4.0'
+gem 'coveralls', require: false
 
 
 # Gems used only for assets and not required

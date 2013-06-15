@@ -1,8 +1,9 @@
 require 'test_helper'
 
-class Web::Admin::PagesControllerTest < ActionController::TestCase
+class Web::Admin::ImagesControllerTest < ActionController::TestCase
   setup do
-    
+    @image = create :image
+    @attrs = attributes_for :image
   end
 
   test "should get index" do
@@ -15,35 +16,27 @@ class Web::Admin::PagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create page" do
-    post :create, page: @attrs
+  test "should create image" do
+    post :create, image: @attrs
     assert_response :redirect
-
-    page = Page.find_by_slug(@attrs[:slug])
-    assert page
-
-    contents_count = page.contents.count
-    need_contents_count = configus.locales.count * configus.languages.count
-    assert contents_count == need_contents_count , "Page contents count- #{contents_count}, but must be #{need_contents_count}"
   end
 
   test "should get edit" do
-    get :edit, id: @page.id
+    get :edit, id: @image.id
     assert_response :success
   end
 
-  test "should update page" do
-    post :update, id: @page.id, page: @attrs
+  test "should update image" do
+    post :update, id: @image.id, image: @attrs
     assert_response :redirect
 
-    assert Page.find_by_slug(@attrs[:slug])
+    assert Image.find_by_name(@attrs[:name])
   end
 
-  test "should destroy page" do
-    delete :destroy, id: @page.id
+  test "should destroy image" do
+    delete :destroy, id: @image.id
     assert_response :redirect
 
-    assert_nil Page.find_by_id(@page)
+    assert_nil Image.find_by_id(@image)
   end
-
 end
