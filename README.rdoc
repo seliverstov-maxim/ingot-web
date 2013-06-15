@@ -1,4 +1,4 @@
-{<img src="https://travis-ci.org/seliverstov-maxim/ingot-web.png?branch=develop" alt="Build Status" />}[https://travis-ci.org/seliverstov-maxim/ingot-web]{<img src="https://coveralls.io/repos/seliverstov-maxim/ingot-web/badge.png?branch=develop" alt="Coverage Status" />}[https://coveralls.io/r/seliverstov-maxim/ingot-web?branch=develop]
+{<img src="https://travis-ci.org/seliverstov-maxim/ingot-web.png?branch=develop" alt="Build Status" />}[https://travis-ci.org/seliverstov-maxim/ingot-web] {<img src="https://coveralls.io/repos/seliverstov-maxim/ingot-web/badge.png?branch=develop" alt="Coverage Status" />}[https://coveralls.io/r/seliverstov-maxim/ingot-web?branch=develop]
 
 
 == Welcome to Rails
