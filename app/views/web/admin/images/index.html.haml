@@ -15,7 +15,7 @@
   %tbody
     - @images.each do |image|
       %tr
-        %td= link_to image.id, image_path(image)
+        %td= link_to image.id, admin_image_path(image)
         %td= image.name
         %td= image.description
         %td= image.tags
