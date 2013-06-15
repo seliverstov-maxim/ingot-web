@@ -39,8 +39,7 @@ class Web::Admin::ImagesController < Web::Admin::ApplicationController
   def destroy
     @image = Image.find(params[:id])
     
-    if image.can_delete?
-      @image.destroy
+    if @image.destroy
       #success flash message
       redirect_to action: :index
     else
